@@ -1,0 +1,28 @@
+<h1 id="tableLabel">Weather employee</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!employees"><em>Loading...</em></p>
+
+<input type="number" id="myInput" (keyup)="filterEmployees($event)" placeholder="Search for id..">
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employees">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Street Address</th>
+      <th>Pets</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.streetAddress }}</td>
+      <td>{{ employee.pets}}</td>
+    </tr>
+  </tbody>
+</table>
